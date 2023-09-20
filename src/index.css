@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-primary: "Roboto", sans-serif;
+    --font-secondary: "Work Sans", sans-serif;
+}
+
+/* Smooth scroll behavior */
+:root {
+    scroll-behavior: smooth;
+  }
+
+.border-animation {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .border-animation::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #4ca4c8;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .border-animation:hover::before {
+    width: 100%;
+  }
+
+  .fade-down {
+    animation: fade-down 0.75s ease-in-out 1 normal forwards;
+  }
+
+  .fade-up {
+    animation: fade-up 0.75s ease-in-out 1 normal forwards;
+  }
+
+  .fade-up-button {
+    opacity: 0;
+    animation: fade-up 0.75s ease-in-out 0.25s 1 normal forwards;
+  }
+
+  @keyframes fade-down {
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+  }
+
+  @keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+  }
+  
+  .navbar a {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-family: var(--font-secondary);
+  }
+
+  p {
+    font-family: var(--font-primary);
+  }
+
+  .line-animation-title {
+    position: absolute;
+    width: 0;
+    height: 4px;
+    background-color: #4ca4c8;
+    animation: line-slide-in-title 0.85s ease-in-out forwards;
+  }
+  
+  @keyframes line-slide-in-title {
+    0% {
+      width: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      width: 100px;
+      transform: translateX(0);
+    }
+  }
+
+  .line-animation-subtitle {
+    position: absolute;
+    width: 0;
+    height: 4px;
+    background-color: #4ca4c8;
+    animation: line-slide-in-subtitle 0.85s ease-in-out forwards;
+  }
+  
+  @keyframes line-slide-in-subtitle {
+    0% {
+      width: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      width: 60px;
+      transform: translateX(0);
+    }
+  }
+
+  .line {
+    position: relative;
+    width: 0px;
+    height: 2px;
+    background-color: #4ca4c8;
+    animation: line-slide-in 0.85s ease-in forwards;
+    transition: width 0.3s ease;
+}
+
+.line-reverse {
+    position: relative;
+    width: 0px;
+    height: 2px;
+    background-color: #4ca4c8;
+    animation: line-slide-in-reverse 0.85s ease-in forwards; /* Removed "reverse" here */
+    transition: width 0.3s ease;
+}
+
+@keyframes line-slide-in {
+    from {
+        width: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        width: 30px;
+        transform: translateX(0);
+    }
+}
+
+@keyframes line-slide-in-reverse {
+    from {
+        width: 0;
+        transform: translateX(50px); /* Changed the initial transform */
+    }
+    to {
+        width: 30px;
+        transform: translateX(0);
+    }
+}
+
+  /* Initial state for the burger menu */
+.burger-menu {
+    display: flex;
+    position: fixed;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: flex-start;
+    top: 0;
+    right: -800px;
+    background-color: rgba(0,0,0,0.85);
+    line-height: 50px;
+    width: 100%;
+    height: 100%;
+    padding-left: 25px;
+    padding-top: 100px;
+    cursor: pointer;
+    z-index: 30;
+    transition: right 0.4s ease-out;
+  }
+  
+  /* Class to slide the menu in */
+  .burger-menu-open {
+    right: 0;
+    position: fixed;
+    overflow: hidden;
+  }
+  
+
+  .subtitle-fade-in {
+    animation: subtitle-fade-in 0.85s ease-in-out normal forwards;
+  }
+
+  @keyframes subtitle-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
+
+  .hovered:hover {
+    background-color: rgba(255, 255, 255, 0.472);
+    transition: all 0.3s ease-in-out
+  }
+  .hovered:hover .icon {
+    background-color: #4ca4c8;
+    transition: all 0.3s ease-in-out;
+  }
+  .hovered:hover .icon .icon-color {
+    fill: white;
+    transition: all 0.3s ease-in-out;
+  }
