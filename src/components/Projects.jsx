@@ -1,10 +1,11 @@
 import React from 'react'
 import NavBar from './NavBar';
+import Footer from './Footer';
 
 const Projects = () => {
   return (
-    <div className='w-screen h-screen bg-gray-300'>
-        <section>
+    <div className='w-screen h-screen container-content'>
+        <section className='content'>
             <div className='absolute inset-0'>
                 <div
                 className='bg-cover w-full h-[400px] filter brightness-50 flex justify-center items-center'
@@ -22,6 +23,9 @@ const Projects = () => {
                 </div>
             </div>
         </section>
+        <footer>
+            <Footer />
+        </footer>
     </div>
   )
 }

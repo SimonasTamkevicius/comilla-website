@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { AiOutlineClose } from 'react-icons/ai'
+import scrollLock, { disablePageScroll, enablePageScroll } from 'scroll-lock';
+import { Link } from 'react-router-dom';
 
 const NavBar = (props) => {
   const { active } = props;
@@ -10,13 +12,24 @@ const NavBar = (props) => {
     setBurgerClicked(!burgerClicked);
   };
 
+  // Effect to lock/unlock scrolling based on burgerClicked state
+  useEffect(() => {
+    if (burgerClicked) {
+      scrollLock.disablePageScroll();
+    } else {
+      scrollLock.enablePageScroll();
+    }
+  }, [burgerClicked]);
+
   return (
     <nav>
-      <div className='flex flex-row justify-between items-center mx-10 md:mx-20 lg:mx-36 py-5 navbar'>
-        <img src='/comilla-logo.jpeg' className='position relative' />
+      <div className='flex flex-row justify-between items-center mx-10 md:mx-20 lg:mx-36 py-5'>
+        <Link to="/">
+          <img src='/comilla-logo.jpeg' className='position relative' />
+        </Link>
 
         {/* Burger menu button for mobile */}
-        <div className='block md:hidden position relative z-40'>
+        <div className='block md:hidden position relative z-50'>
           <p className='text-white text-3xl hover:cursor-pointer' onClick={handleBurgerMenuClick}>
             {burgerClicked ? <AiOutlineClose /> : <RxHamburgerMenu />}
           </p>
@@ -24,19 +37,19 @@ const NavBar = (props) => {
 
         {/* Slide-in burger menu */}
         <div
-          className={`burger-menu position block md:hidden ${
+          className={`burger-menu position block md:hidden z-40 ${
             burgerClicked ? 'burger-menu-open' : ''
           }`}
         >
-          <p className={`text-white ${active === "home" ? "font-bold" : "opacity-60 hover:opacity-100"}`} onClick={handleBurgerMenuClick}>HOME</p>
-          <p className={`text-white ${active === "about" ? "font-bold" : "opacity-80 hover:opacity-100"}`} onClick={handleBurgerMenuClick}>ABOUT</p>
-          <p className={`text-white ${active === "design" ? "font-bold" : "opacity-80 hover:opacity-100"}`} onClick={handleBurgerMenuClick}>DESIGN</p>
-          <p className={`text-white ${active === "contact" ? "font-bold" : "opacity-80 hover:opacity-100"}`} onClick={handleBurgerMenuClick}>CONTACT</p>
-          <p className={`text-white ${active === "projects" ? "font-bold" : "opacity-80 hover:opacity-100"}`} onClick={handleBurgerMenuClick}>PROJECTS</p>
+          <a href='/' className={`text-white ${active === "home" ? "font-bold" : "opacity-60 hover:opacity-100"}`} onClick={handleBurgerMenuClick}>HOME</a>
+          <a href='/about' className={`text-white ${active === "about" ? "font-bold" : "opacity-80 hover:opacity-100"}`} onClick={handleBurgerMenuClick}>ABOUT</a>
+          <a href='/design' className={`text-white ${active === "design" ? "font-bold" : "opacity-80 hover:opacity-100"}`} onClick={handleBurgerMenuClick}>DESIGN</a>
+          <a href='/contact' className={`text-white ${active === "contact" ? "font-bold" : "opacity-80 hover:opacity-100"}`} onClick={handleBurgerMenuClick}>CONTACT</a>
+          <a href='/projects' className={`text-white ${active === "projects" ? "font-bold" : "opacity-80 hover:opacity-100"}`} onClick={handleBurgerMenuClick}>PROJECTS</a>
         </div>
 
         {/* Menu items */}
-        <div className='hidden md:block'>
+        <div className='hidden md:block navbar-desktop'>
           <ul className='flex flex-row justify-around space-x-10'>
             <li>
               <a

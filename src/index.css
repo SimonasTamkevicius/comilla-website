@@ -43,7 +43,7 @@
 
   .fade-up-button {
     opacity: 0;
-    animation: fade-up 0.75s ease-in-out 0.25s 1 normal forwards;
+    animation: fade-up 1.25s ease-in-out 0.25s 1 normal forwards;
   }
 
   @keyframes fade-down {
@@ -74,6 +74,20 @@
     font-weight: 500;
   }
 
+  .navbar-desktop {
+    opacity: 0;
+    animation: navbar-animation 0.1s ease-in 1 normal forwards;
+  }
+
+  @keyframes navbar-animation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
+
   h2 {
     font-family: var(--font-secondary);
   }
@@ -87,17 +101,52 @@
     width: 0;
     height: 4px;
     background-color: #4ca4c8;
-    animation: line-slide-in-title 0.85s ease-in-out forwards;
+    animation: line-slide-in-title 1.25s 0.85s ease-in-out forwards;
+  }
+
+  .line-animation-title-mobile {
+    position: absolute;
+    width: 0;
+    height: 4px;
+    background-color: #4ca4c8;
+    animation: line-slide-in-title-mobile 1.25s 0.85s ease-in-out forwards;
   }
   
   @keyframes line-slide-in-title {
     0% {
       width: 0;
-      transform: translateX(-100%);
+      transform: translateX(0);
+    }
+    50% {
+      width: 520px;
+      transform: translateX(0);
     }
     100% {
-      width: 100px;
+        width: 0;
+        transform: translateX(100%);
+    }
+  }
+
+  @keyframes line-slide-in-title-mobile {
+    0% {
+      width: 0;
       transform: translateX(0);
+    }
+    50% {
+      width: 250px;
+      transform: translateX(0);
+    }
+    90% {
+        width: 10px;
+        transform: translateX(75px)
+    }
+    95% {
+        width: 5px;
+        transform: translateX(0);
+    }
+    100% {
+        width: 0;
+        transform: translateX(0);
     }
   }
 
@@ -213,3 +262,40 @@
     fill: white;
     transition: all 0.3s ease-in-out;
   }
+
+
+  textarea {
+    min-height: 250px;
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  
+  .focused-text-input:focus {
+    border-color: #4ca4c8;
+  }
+
+  .hovered-button:hover .text-hover-white {
+    color: #4ca4c8;
+    transition: all 0.3s ease-in-out;
+  }
+
+
+  /* CSS */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .container-content {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  footer {
+    background-color: #333; /* Set your desired background color */
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
