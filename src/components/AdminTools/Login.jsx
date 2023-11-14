@@ -63,7 +63,9 @@ const Login = () => {
     <div>
         <div className='absolute inset-0'>
             {loading && (
-                <div className='bg-black absolute inset-0 opacity-50 z-10 flex justify-center items-center'>Loading...</div>
+                <div className='bg-black absolute inset-0 opacity-50 z-10 flex justify-center items-center'>
+                    <div className="loader absolute text-5xl" />
+                </div>
             )}
             {message && (
                 <div className='bg-black absolute inset-0 opacity-50 z-10 flex justify-center items-center'>
