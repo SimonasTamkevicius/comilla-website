@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 
 const isMobileScreen = () => {
   return window.innerWidth <= 767;
@@ -47,9 +48,9 @@ const Home = () => {
       <section className='contact-section'>
         <h1 className='contact-title'>Ready to work with us?</h1>
         <p className='contact-description'>Get in touch with us today to discuss your next project.</p>
-        <a href='/contact'>
+        <Link to='/contact'>
           <button className='contact-button'>Let's Build Together</button>
-        </a>
+        </Link>
       </section>
       <footer>
         <Footer />

@@ -92,9 +92,9 @@ const Events = () => {
       <section className='contact-section navbar-desktop'>
         <h1 className='contact-title'>Ready to work with us?</h1>
         <p className='contact-description'>Get in touch with us today to discuss your next project.</p>
-        <a href='/contact'>
+        <Link to='/contact'>
           <button className='contact-button'>Let's Build Together</button>
-        </a>
+        </Link>
       </section>
       <footer>
         <Footer />

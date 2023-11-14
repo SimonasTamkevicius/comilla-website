@@ -2,6 +2,7 @@ import React from 'react'
 import NavBar from './NavBar';
 import Footer from './Footer';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 
 const About = () => {
     const [colorRef, colorInView] = useInView({
@@ -158,9 +159,9 @@ const About = () => {
                     </div>
                     <p className='text-lg mt-5'>Thank you for considering Comilla Inc. and visiting our website.</p>
                     <div className='flex justify-end w-max-xl md:mr-10'>
-                        <a href='/contact'>
+                        <Link to='/contact'>
                             <button className='btn btn-4'><p>Contact Us</p></button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
