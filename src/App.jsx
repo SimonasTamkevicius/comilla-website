@@ -16,27 +16,27 @@ import SingleEventPage from "./components/SingleEventPage"
 
 function App() {
   return (
-    <div>
-      <AuthProvider>
-        <HashRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/singleProjectPage" element={<SingleProjectPage />} />
-            <Route path="/singleEventPage" element={<SingleEventPage />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/login" element={<Login />} />
-            <Route element={<ProtectedRoutes />}>
-              <Route path="/manage" element={<Manage />} />
-              <Route path="/EditProject" element={<EditProject />} />
-              <Route path="/EditEvent" element={<EditEvent />} />
-            </Route>
-          </Routes>
-        </HashRouter>
-      </AuthProvider>
-    </div>
+    <HashRouter>
+      <div>
+        <AuthProvider>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/singleProjectPage" element={<SingleProjectPage />} />
+              <Route path="/singleEventPage" element={<SingleEventPage />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/login" element={<Login />} />
+              <Route element={<ProtectedRoutes />}>
+                <Route path="/manage" element={<Manage />} />
+                <Route path="/EditProject" element={<EditProject />} />
+                <Route path="/EditEvent" element={<EditEvent />} />
+              </Route>
+            </Routes>
+        </AuthProvider>
+      </div>
+    </HashRouter>
   )
 }
 
