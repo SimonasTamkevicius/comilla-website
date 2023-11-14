@@ -26,7 +26,7 @@ const ImageCarousel = ({ images }) => {
           <div key={index}>
             <div className="w-full aspect-w-4 aspect-h-3 md:aspect-h-7">
               <img
-                src={`http://localhost:9000/uploads/${image}`}
+                src={`https://comilla-website-backend.onrender.com/uploads/${image}`}
                 alt={`Image ${index + 1}`}
                 className="object-cover w-full h-[200px] md:h-[500px] lg:h-[700px]"
               />

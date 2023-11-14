@@ -193,7 +193,7 @@ const EditEvent = () => {
                   <div>
                     <span>
                       {currentImage && (
-                        <img src={`http://localhost:9000/uploads/${currentImage}`} alt={`Image ${imageNumber}`} className='w-60 h-32' />
+                        <img src={`https://comilla-website-backend.onrender.com/uploads/${currentImage}`} alt={`Image ${imageNumber}`} className='w-60 h-32' />
                       )}
                     </span>
                     <input
