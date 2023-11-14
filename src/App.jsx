@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { HashRouter, Route, Routes } from "react-router-dom"
 import Home from "./components/Home"
 import Projects from "./components/Projects"
 import About from "./components/About"
@@ -18,7 +18,7 @@ function App() {
   return (
     <div>
       <AuthProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
@@ -34,7 +34,7 @@ function App() {
               <Route path="/EditEvent" element={<EditEvent />} />
             </Route>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </AuthProvider>
     </div>
   )
