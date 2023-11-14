@@ -4,6 +4,7 @@ import { useAuth } from '../../utils/AuthContext';
 import NavBar from '../NavBar';
 import { useNavigate } from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
+import Footer from '../Footer';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -81,7 +82,7 @@ const Login = () => {
             </div>
         </div>
         <NavBar />
-        <div className='flex flex-col justify-center items-center mt-10 relative mx-10'>
+        <div className='flex flex-col justify-center items-center mt-10 mb-20 relative mx-10'>
             <h1 className='text-4xl'>Company Login</h1>
             <form className='mt-10 border-2 border-[#4ca4c8] p-5 rounded-md w-full md:w-[500px] space-y-4' onSubmit={handleSubmit}>
                 <div className='flex flex-col w-full space-y-2'>
@@ -104,6 +105,9 @@ const Login = () => {
                     </button>
                 </div>
             </form>
+        </div>
+        <div>
+            <Footer />
         </div>
     </div>
   )
