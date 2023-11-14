@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const backendBaseURL = "http://localhost:9000";
+const backendBaseURL = "https://comilla-website-backend.onrender.com";
 
 const axiosInstance = axios.create({
     baseURL: backendBaseURL,
