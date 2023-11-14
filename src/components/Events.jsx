@@ -36,7 +36,7 @@ const Events = () => {
           <div
             className="bg-cover w-full h-[400px] filter brightness-50 flex justify-center items-center"
             style={{
-              backgroundImage: "url('contactPageBanner.jpeg')",
+              backgroundImage: "url('unibuilding.jpg')",
               backgroundPosition: "center center",
             }}
           ></div>
