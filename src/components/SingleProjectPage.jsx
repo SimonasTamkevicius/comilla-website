@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import NavBar from './NavBar';
 import ImageCarousel from './ImageCarousel';
 import Footer from './Footer';
@@ -44,14 +44,14 @@ const SingleProjectPage = () => {
           <div className="flex flex-row justify-center items-center mt-10 space-x-2 mr-2">
             <div className="line"></div>
             <h4 className="position relative text-white subtitle-fade-in">
-              <a href="/" className="font-semibold opacity-80 hover:underline hover:cursor-pointer">
+              <Link to="/" className="font-semibold opacity-80 hover:underline hover:cursor-pointer">
                 Home
-              </a>{" "}
+              </Link>{" "}
               /
               {" "}
-              <a href="/projects" className="font-semibold opacity-80 hover:underline hover:cursor-pointer">
+              <Link to="/projects" className="font-semibold opacity-80 hover:underline hover:cursor-pointer">
                 Projects
-              </a>{" "}
+              </Link>{" "}
               / {" "}
               <span className="text-[#53a4db] font-semibold">
               {isSmallScreen ? (
