@@ -3,6 +3,7 @@ import NavBar from './NavBar';
 import Footer from './Footer';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
+import PreloadImage from '../utils/PreloadImage';
 
 const isMobileScreen = () => {
   return window.innerWidth <= 767;
@@ -17,6 +18,7 @@ const Home = () => {
   return (
     <div>
       <section className='content w-screen h-screen'>
+        <PreloadImage src='projectInProgressRender.jpg' />
         <div className='color-sweep-animation'>
           <div className='absolute inset-0'>
             <div
