@@ -15,6 +15,10 @@ const Contact = () => {
 
     const [messageSent, setMessageSent] = useState(false);
 
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'auto' });
+    }, []);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const formData = new FormData();
