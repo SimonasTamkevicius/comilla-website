@@ -70,7 +70,7 @@ const Projects = () => {
                 >
                   <div className="w-full h-[300px] md:h-[400px]">
                     <img
-                      src={`http://https://comilla-website-backend.onrender.com/uploads/${project.images[0]}`}
+                      src={`https://comilla-website-backend.onrender.com/uploads/${project.images[0]}`}
                       alt="Project 1"
                       className="object-cover w-full h-full img-zoom"
                     />
