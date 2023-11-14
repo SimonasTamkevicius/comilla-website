@@ -1,48 +1,55 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
 import Footer from './Footer';
+import { useInView } from 'react-intersection-observer';
 
 const isMobileScreen = () => {
-    return window.innerWidth <= 767;
+  return window.innerWidth <= 767;
 };
 
 const Home = () => {
-  const [isMobile, setIsMobile] = useState(isMobileScreen());
+  const isMobile = isMobileScreen();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
   return (
-    <div className='w-screen h-screen container-content'>
-      <section className='content'>
+    <div>
+      <section className='content w-screen h-screen'>
         <div className='color-sweep-animation'>
           <div className='absolute inset-0'>
             <div
-              className='bg-cover w-full h-full filter brightness-50'
-              style={{ backgroundImage: "url('bgImage2.jpg')" }}
-            >
-            </div>
+              className='bg-cover w-full h-full filter img-brightness'
+              style={{ backgroundImage: "url('projectInProgressRender.jpg')" }}
+            ></div>
           </div>
           <NavBar active="home" />
-          <div className='flex flex-col mt-20 mx-10 md:mx-20 lg:mx-36'>
-            <h2 className='text-white text-5xl fade-down mt-10'>
-              Welcome to <span className='title-border-animation' style={{ position: 'relative' }}>Comilla Inc.</span>
-              <br />
-            </h2>
+          <div className='flex justify-center'>
             <div>
-                {isMobile ? (
+              <div className='flex flex-col mt-5 md:mt-0 mx-10 md:mx-20 lg:mx-36'>
+                <h2 className='text-white text-5xl fade-down mt-10'>
+                  Welcome to <span className='title-border-animation' style={{ position: 'relative' }}>Comilla Inc.</span>
+                  <br />
+                </h2>
+                <div>
+                  {isMobile ? (
                     <div className='line-animation-title-mobile'></div>
-                ) : (
+                  ) : (
                     <div className='line-animation-title'></div>
-                )}
+                  )}
+                </div>
+                <p className='text-white text-lg max-w-lg mt-10 fade-up'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
             </div>
-            <p className='text-white text-lg max-w-lg mt-10 fade-up'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-          <div className='flex justify-end items-center mt-10 mx-10 md:mx-20 lg:mx-36 max-w-lg'>
-            <button className='border-2 border-[#4ca4c8] rounded-xl p-2 text-white fade-up-button hover:bg-[#4ca4c8] transition-colors duration-100 ease-in'>Learn More</button>
           </div>
         </div>
       </section>
-      <section>
-        <div className='w-screen h-screen'>
-
-        </div>
+      <section className='contact-section'>
+        <h1 className='contact-title'>Ready to work with us?</h1>
+        <p className='contact-description'>Get in touch with us today to discuss your next project.</p>
+        <a href='/contact'>
+          <button className='contact-button'>Let's Build Together</button>
+        </a>
       </section>
       <footer>
         <Footer />
