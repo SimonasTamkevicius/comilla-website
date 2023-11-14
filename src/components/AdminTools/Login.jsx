@@ -27,6 +27,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setLoading(true);
         const formData = new FormData();
         formData.append("email", email);
         formData.append("password", password);
@@ -42,6 +43,7 @@ const Login = () => {
             console.log(response);
             const { accessToken, email, _id, message } = response.data;
             loginUser(accessToken, _id, email)
+            setLoading(false);
             setMessage(message);
             setTimeout(() => {
                 setMessage('');
