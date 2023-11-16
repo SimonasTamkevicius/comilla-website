@@ -37,7 +37,7 @@ const AddEvent = () => {
           'Content-Type': 'multipart/form-data',
         },
       })
-      .then((res) => {
+      .then((response) => {
         setMessage(response.data.message);
         setName('');
         setDescription('');

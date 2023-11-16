@@ -48,7 +48,7 @@ const NavBar = (props) => {
             burgerClicked ? 'burger-menu-open' : ''
           }`}
         >
-          <Link to="/" className={`text-white ${active === "home" ? "font-bold" : "opacity-60 hover:opacity-100"}`} onClick={handleBurgerMenuClick}>HOME</Link>
+          <Link to="/" className={`text-white ${active === "home" ? "font-bold" : "opacity-80 hover:opacity-100"}`} onClick={handleBurgerMenuClick}>HOME</Link>
           <Link to="/about" className={`text-white ${active === "about" ? "font-bold" : "opacity-80 hover:opacity-100"}`} onClick={handleBurgerMenuClick}>ABOUT</Link>
           <Link to="/projects" className={`text-white ${active === "projects" ? "font-bold" : "opacity-80 hover:opacity-100"}`} onClick={handleBurgerMenuClick}>PROJECTS</Link>
           <Link to="/events" className={`text-white ${active === "events" ? "font-bold" : "opacity-80 hover:opacity-100"}`} onClick={handleBurgerMenuClick}>EVENTS</Link>

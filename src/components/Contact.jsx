@@ -73,7 +73,7 @@ const Contact = () => {
         <div
             className="bg-cover w-full h-[400px] filter brightness-50 flex justify-center items-center"
             style={{
-                backgroundImage: "url('contactPageBanner.jpeg')",
+                backgroundImage: "url('Callus.jpg')",
                 backgroundPosition: "center center",
             }}
         ></div>
@@ -107,7 +107,7 @@ const Contact = () => {
                         </div>
                         <div className='flex flex-col'>
                             <h4 className='text-gray-700 font-semibold text-2xl'>Call Us</h4>
-                            <p className='text-gray-500'>1234567890</p>
+                            <p className='text-gray-500'>(437) 577 9843</p>
                         </div>
                     </div>
                     <div className='flex flex-row items-center space-x-4 hovered p-2 rounded-md'>

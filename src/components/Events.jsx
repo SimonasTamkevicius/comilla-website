@@ -66,7 +66,7 @@ const Events = () => {
                 <div className='flex justify-start items-start lg:w-1/2 min-h-[300px] md:h-[400px] overflow-hidden'>
                   <img
                     className='rounded-t-3xl lg:rounded-l-3xl lg:rounded-r-none w-full object-cover h-full'
-                    src={`https://comilla-website-backend.onrender.com/uploads/${event.images[0]}`}
+                    src={event.images[0]}
                     alt={event.name}
                   />
                 </div>
