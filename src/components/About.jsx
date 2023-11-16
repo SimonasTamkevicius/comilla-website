@@ -169,16 +169,16 @@ const About = () => {
         <section className='content'>
             <div className='relative'>
                 <div ref={associationsRef} className={`navbar-desktop my-10 md:my-20 ${associationsInView && 'about-p-fade-in'}`}>
-                <div className='flex flex-row items-center md:space-x-5 text-start pl-1 md:mx-20'>
-                    {associationsInView && <div className='line-network'></div>}
-                    <h1 className={`text-3xl font-semibold pl-4`}>Our Associations</h1>
-                </div>
-                <div className='grid grid-cols-2 md:flex flex-row space-y-10 md:space-y-0 md:flex-row w-full justify-around items-center px-5 md:px-20 mt-10'>
-                    <img src='/IBEW.png' className='hover:scale-105 p-2 transition-all duration-200 w-32 md:w-36'  />
-                    <img src='/ElectricalSafetyAuthority.png' className='hover:scale-105 p-2 transition-all duration-200 w-32 md:w-36'  />
-                    <img src='/ECAO.png' className='hover:scale-105 p-2 transition-all duration-200 w-32 md:w-36'  />
-                    <img src='/WSIB.png' className='hover:scale-105 p-2 transition-all duration-200 w-32 md:w-36'  />
-                </div>
+                    <div className='flex flex-row items-center md:space-x-5 text-start pl-1 md:mx-20'>
+                        {associationsInView && <div className='line-network'></div>}
+                        <h1 className={`text-3xl font-semibold pl-4`}>Our Associations</h1>
+                    </div>
+                    <div className='grid grid-cols-2 md:flex flex-row space-y-10 md:space-y-0 md:flex-row w-full justify-around items-center px-5 md:px-20 mt-10'>
+                        <img src='/IBEW.png' className='hover:scale-105 p-2 transition-all duration-200 w-32 md:w-36'  />
+                        <img src='/ElectricalSafetyAuthority.png' className='hover:scale-105 p-2 transition-all duration-200 w-32 md:w-36'  />
+                        <img src='/ECAO.png' className='hover:scale-105 p-2 transition-all duration-200 w-32 md:w-36'  />
+                        <img src='/WSIB.png' className='hover:scale-105 p-2 transition-all duration-200 w-32 md:w-36'  />
+                    </div>
                 </div>
             </div>
         </section>

@@ -39,12 +39,6 @@ const AddEvent = () => {
       })
       .then((response) => {
         setMessage(response.data.message);
-        setName('');
-        setDescription('');
-        setDate('');
-        setTime('');
-        setLocation('');
-        setImages(Array(6).fill(null));
         setTimeout(() => {
           setMessage('');
           window.location.reload();

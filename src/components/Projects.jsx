@@ -8,6 +8,7 @@ import axiosInstance from '../../utils/axiosInstance';
 const Projects = () => {
   const [hoveredCards, setHoveredCards] = useState([]);
   const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const handleHover = (cardNumber, isHovered) => {
     setHoveredCards((prevHoveredCards) => {
@@ -23,9 +24,11 @@ const Projects = () => {
       .then((response) => {
         setProjects(response.data);
         setHoveredCards(new Array(response.data.length).fill(false));
+        setLoading(false);
       })
       .catch(function (err) {
         console.error('Error getting projects:', err);
+        setLoading(false);
       });
   }, []);
 
@@ -55,7 +58,14 @@ const Projects = () => {
           </div>
         </div>
       </section>
-      <section className="content">
+      <section className="content relative mt-[88px]">
+        <div className='absolute inset-0'>
+            {loading && (
+                <div className='bg-black absolute inset-0 opacity-50 z-10 flex justify-center pt-10'>
+                    <div className="loader absolute text-5xl" />
+                </div>
+            )}
+        </div>
         <div className="relative flex flex-col mt-40 mb-20 md:mb-40 mx-10 md:mx-20 lg:mx-36 navbar-desktop">
           <div className="relative flex flex-col md:grid md:grid-cols-12 justify-center items-center gap-10">
             {projects.map((project, i) => {
