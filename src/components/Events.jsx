@@ -69,7 +69,7 @@ const Events = () => {
         <div className='mt-10 ml-10 md:ml-20 lg:ml-36'>
           <h1 className='text-4xl subtitle-fade-in'>Upcoming Events</h1>
         </div>
-        <div className={`flex flex-col justify-center ${events.length === 0 ? 'items-start' : 'items-center'} items-center mt-10 mb-32 mx-10 md:mx-20 lg:mx-36 space-y-10`}>
+        <div className={`flex flex-col justify-center ${events.length === 0 ? 'items-start' : 'items-center'} items-center mt-10 mb-32 mx-10 md:mx-20 lg:mx-36 space-y-10 z-50`}>
           {eventsRetrieved && events.length === 0 ? (
             <p className="text-2xl">No events are currently scheduled</p>
           ) : (
