@@ -58,11 +58,11 @@ const Events = () => {
           </div>
         </div>
       </section>
-      <section className='content relative mt-[88px] min-h-screen'>
+      <section className='content relative mt-[88px]'>
         <div className='absolute inset-0'>
             {loading && (
-                <div className='bg-black absolute inset-0 opacity-50 z-10 flex justify-center pt-10'>
-                    <div className="loader absolute text-5xl" />
+                <div className=' absolute inset-0 bg-opacity-50 z-40 flex justify-center items-center pt-10'>
+                    <div className="loader-black absolute text-5xl" />
                 </div>
             )}
         </div>
