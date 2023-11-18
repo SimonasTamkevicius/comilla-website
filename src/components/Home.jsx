@@ -15,9 +15,10 @@ const Home = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
+  
   return (
     <div>
-      <section className='content w-screen h-screen'>
+      <section className='content h-screen flex flex-col overflow-y-auto'>
         <PreloadImage src='projectInProgressRender.jpg' />
         <div className='color-sweep-animation'>
           <div className='absolute inset-0'>
@@ -27,7 +28,7 @@ const Home = () => {
             ></div>
           </div>
           <NavBar active="home" />
-          <div className='flex justify-center items-center md:mt-20'>
+          <div className='flex justify-center items-center lg:mt-20'>
             <div>
               <div className='flex flex-col mt-5 md:mt-0 mx-10 md:mx-20 lg:mx-36 text-center md:text-start'>
                 <h2 className='text-white text-6xl fade-down mt-10'>

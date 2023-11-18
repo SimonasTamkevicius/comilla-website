@@ -120,7 +120,7 @@
 
   .line-animation-title-mobile {
     position: absolute;
-    margin-left: 10px;
+    margin-left: 30px;
     width: 0;
     height: 4px;
     background-color: #4ca4c8;
@@ -341,8 +341,16 @@ html, body {
   .content {
     flex: 1;
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
   }  
+
+  /* For Safari on iOS */
+  @supports (-webkit-touch-callout: none) {
+    .content {
+      height: -webkit-fill-available;
+    }
+  }
   
   footer {
     position: relative;

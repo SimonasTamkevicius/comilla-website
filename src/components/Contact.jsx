@@ -89,7 +89,7 @@ const Contact = () => {
             <div className='line-reverse'></div>
             </div>
         </div>
-        <div className='relative flex flex-col md:grid md:grid-cols-12 md:grid-rows-6 px-5 space-y-4 md:space-y-0 md:px-20 mt-5 mb-20 md:mb-0 md:space-x-6'>
+        <div className='relative flex flex-col md:grid md:grid-cols-12 md:grid-rows-6 px-5 space-y-4 md:space-y-0 lg:px-20 mt-5 mb-20 md:mb-0 md:space-x-6 w-full'>
             <div className='md:col-span-5 md:row-span-5 p-4 bg-gray-50 border-2 border-[#4ca4c8] rounded-md items-center fade-up'>
                 <div className='space-y-2'>
                     <div className='flex flex-row items-center space-x-4 hovered p-2 rounded-md'>
@@ -127,12 +127,12 @@ const Contact = () => {
             {!messageSent &&
             <div className='md:col-span-7 md:row-span-5 p-4 bg-gray-50 border-2 border-[#4ca4c8] rounded-md items-center fade-up-delayed'>
                 <form className='space-y-5' onSubmit={handleSubmit}>
-                    <div className='flex flex-col md:flex-row justify-between md:space-x-5'>
+                    <div className='flex flex-col lg:flex-row justify-between lg:space-x-5'>
                         <div className='flex flex-col w-full space-y-2'>
                             <label className='text-gray-700 font-semibold text-2xl'>Name</label>
                             <input value={name} onChange={handleChange} className='h-10 p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' type='text' placeholder='Your name' name='name' required />
                         </div>
-                        <div className='flex flex-col w-full space-y-2'>
+                        <div className='flex flex-col w-full space-y-2 mt-2 lg:mt-0'>
                             <label className='text-gray-700 font-semibold text-2xl'>Email</label>
                             <input value={email} onChange={handleChange} className='h-10 p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' type='email' placeholder='Your email' name='email' required />
                         </div>

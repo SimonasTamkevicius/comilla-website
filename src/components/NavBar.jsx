@@ -50,7 +50,7 @@ const NavBar = (props) => {
 
   return (
     <nav>
-      <div className='flex flex-row justify-between items-center mr-10 md:mx-20 lg:mx-36 py-5'>
+      <div className='flex flex-row justify-between items-center mr-10 md:mx-10 lg:mx-36 py-5'>
         {renderHomeLogoLink()}
 
         {/* Burger menu button for mobile */}
