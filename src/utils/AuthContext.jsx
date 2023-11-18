@@ -10,16 +10,6 @@ export const AuthProvider = ({ children }) => {
       email: ""
     });
     const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-      axiosInstance.get("/events")
-        .then(res => {
-          console.log('');
-        })
-        .catch(err => {
-          console.error(err)
-        })
-    }, []);
   
     useEffect(() => {
       const token = getCookie("accessToken");
