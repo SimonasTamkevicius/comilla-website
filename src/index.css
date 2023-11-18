@@ -120,6 +120,7 @@
 
   .line-animation-title-mobile {
     position: absolute;
+    margin-left: 10px;
     width: 0;
     height: 4px;
     background-color: #4ca4c8;
@@ -132,7 +133,7 @@
       transform: translateX(0);
     }
     50% {
-      width: 490px;
+      width: 600px;
       transform: translateX(0);
     }
     100% {
@@ -147,7 +148,7 @@
       transform: translateX(0);
     }
     50% {
-      width: 250px;
+      width: 300px;
       transform: translateX(0);
     }
     90% {
