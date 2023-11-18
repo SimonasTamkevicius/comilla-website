@@ -73,7 +73,7 @@ const Events = () => {
             <p className="text-2xl">No events are currently scheduled</p>
           ) : (
             events.map((event, i) => (
-              <div key={i} className='event-card flex flex-col w-full lg:flex-row md:space-x-10 bg-[#f5f5f5] rounded-3xl'>
+              <div key={i} className='event-card shadow-md flex flex-col w-full lg:flex-row md:space-x-10 bg-[#f5f5f5] rounded-3xl'>
                 <div className='flex justify-start items-start lg:w-1/2 min-h-[300px] md:h-[400px] overflow-hidden'>
                   <img
                     className='rounded-t-3xl lg:rounded-l-3xl lg:rounded-r-none w-full object-cover h-full'
