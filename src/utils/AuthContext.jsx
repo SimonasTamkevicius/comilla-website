@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect, createContext } from "react";
+import axiosInstance from "../../utils/axiosInstance";
 
 const AuthContext = createContext();
 
@@ -9,6 +10,16 @@ export const AuthProvider = ({ children }) => {
       email: ""
     });
     const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+      axiosInstance.get("/events")
+        .then(res => {
+          console.log('');
+        })
+        .catch(err => {
+          console.error(err)
+        })
+    }, []);
   
     useEffect(() => {
       const token = getCookie("accessToken");
