@@ -130,20 +130,20 @@ const Contact = () => {
                     <div className='flex flex-col md:flex-row justify-between md:space-x-5'>
                         <div className='flex flex-col w-full space-y-2'>
                             <label className='text-gray-700 font-semibold text-2xl'>Name</label>
-                            <input value={name} onChange={handleChange} className='h-10 p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' type='text' placeholder='Your name' name='name' />
+                            <input value={name} onChange={handleChange} className='h-10 p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' type='text' placeholder='Your name' name='name' required />
                         </div>
                         <div className='flex flex-col w-full space-y-2'>
                             <label className='text-gray-700 font-semibold text-2xl'>Email</label>
-                            <input value={email} onChange={handleChange} className='h-10 p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' type='email' placeholder='Your email' name='email' />
+                            <input value={email} onChange={handleChange} className='h-10 p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' type='email' placeholder='Your email' name='email' required />
                         </div>
                     </div>
                     <div className='flex flex-col w-full space-y-2'>
                         <label className='text-gray-700 font-semibold text-2xl'>Subject</label>
-                        <input value={subject} onChange={handleChange} className='h-10 p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' type='text' placeholder='Subject' name='subject' />
+                        <input value={subject} onChange={handleChange} className='h-10 p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' type='text' placeholder='Subject' name='subject' required />
                     </div>
                     <div className='flex flex-col w-full space-y-2'>
                         <label className='text-gray-700 font-semibold text-2xl'>Message</label>
-                        <textarea value={message} onChange={handleChange} className='p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' id="message" name="message" rows="6" placeholder='Message'></textarea>
+                        <textarea value={message} onChange={handleChange} className='p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' id="message" name="message" rows="6" placeholder='Message' required></textarea>
                     </div>
                     <div className='flex justify-center items-center'>
                         <button type='submit' className='flex flex-row justify-between items-center border-2 border-white rounded-md hover:border-[#4ca4c8] bg-[#4ca4c8] hover:bg-white py-2 px-3 space-x-3 hovered-button transition-colors duration-300 ease-in-out md:mt-5'>
