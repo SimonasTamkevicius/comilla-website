@@ -27,7 +27,7 @@ const Home = () => {
             ></div>
           </div>
           <NavBar active="home" />
-          <div className='flex justify-center'>
+          <div className='flex justify-center mt-20'>
             <div>
               <div className='flex flex-col mt-5 md:mt-0 mx-10 md:mx-20 lg:mx-36'>
                 <h2 className='text-white text-5xl fade-down mt-10'>
@@ -41,7 +41,6 @@ const Home = () => {
                     <div className='line-animation-title'></div>
                   )}
                 </div>
-                <p className='text-white text-lg max-w-lg mt-10 fade-up'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               </div>
             </div>
           </div>

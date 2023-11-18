@@ -153,7 +153,7 @@ const EditProduct = () => {
                     Update Image {imageNumber}
                     <br />
                     <span className="text-gray-500">
-                      {currentImage ? `Current Image: ${currentImage}` : 'No Image'}
+                      {currentImage ? '' : 'No Image'}
                     </span>
                   </label>
                   <div>

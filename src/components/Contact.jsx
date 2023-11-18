@@ -107,7 +107,7 @@ const Contact = () => {
                         </div>
                         <div className='flex flex-col'>
                             <h4 className='text-gray-700 font-semibold text-2xl'>Call Us</h4>
-                            <p className='text-gray-500'>(437) 577 9843</p>
+                            <p className='text-gray-500'>437-880-7851</p>
                         </div>
                     </div>
                     <div className='flex flex-row items-center space-x-4 hovered p-2 rounded-md'>
