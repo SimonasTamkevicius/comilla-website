@@ -31,26 +31,11 @@ function formatTime(inputTime) {
 const SingleEventPage = () => {
     const location = useLocation();
     const { event } = location.state;
-    const [isSmallScreen, setIsSmallScreen] = useState(false);
   
     console.log(event);
   
     useEffect(() => {
       window.scrollTo({ top: 0, behavior: 'auto' });
-    }, []);
-  
-    useEffect(() => {
-      const checkScreenSize = () => {
-        setIsSmallScreen(window.innerWidth <= 768);
-      };
-  
-      checkScreenSize();
-  
-      window.addEventListener('resize', checkScreenSize);
-  
-      return () => {
-        window.removeEventListener('resize', checkScreenSize);
-      };
     }, []);
   
     const descriptionParagraphs = event.description.split('\n').map((paragraph, index) => (
