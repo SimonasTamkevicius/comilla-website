@@ -68,7 +68,7 @@ const SingleProjectPage = () => {
       <section className='content mt-10'>
         <ImageCarousel images={project.images} />
       </section>
-      <section className='content py-10 mb-10 md:mb-20 mx-10 md:mx-20 lg:mx-36'>
+      <section className='content  md:mb-20 mx-10 md:mx-20 lg:mx-36'>
         <div className='flex flex-col md:space-x-5 mt-5 md:flex-row'>
           <div className='w-full md:w-1/4 bg-gray-600 rounded-md p-4'>
             <h1 className='text-2xl font-semibold text-white'>{project.name}</h1>
