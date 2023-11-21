@@ -83,7 +83,7 @@ const SingleEventPage = () => {
           </div>
         </section>
         <section className="content mt-10">
-          {/* <ImageCarousel images={event.images} /> */}
+          <ImageCarousel images={event.images} />
         </section>
         <section className="content py-10 mb-10 md:mb-20 mx-10 md:mx-20 lg:mx-36">
           <h1 className="text-4xl font-bold mb-2">{event.name}</h1>
