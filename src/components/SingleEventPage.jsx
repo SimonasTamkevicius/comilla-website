@@ -100,7 +100,7 @@ const SingleEventPage = () => {
         <section className="content mt-10">
           <ImageCarousel images={event.images} />
         </section>
-        <section className="content  md:mb-20 mx-10 md:mx-20 lg:mx-36">
+        <section className="content py-10 mb-10 md:mb-20 mx-10 md:mx-20 lg:mx-36">
           <h1 className="text-4xl font-bold mb-2">{event.name}</h1>
           <div className="flex flex-row space-x-5">
             <p className='font-semibold'>{formatDate(event.date)}</p>
