@@ -346,11 +346,11 @@ html, body {
   }  
 
   /* For Safari on iOS */
-  @supports (-webkit-touch-callout: none) {
+  /* @supports (-webkit-touch-callout: none) {
     .content {
       height: -webkit-fill-available;
     }
-  }
+  } */
   
   footer {
     position: relative;
