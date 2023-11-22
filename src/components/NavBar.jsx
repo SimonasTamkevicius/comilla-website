@@ -28,12 +28,30 @@ const NavBar = (props) => {
     navigate('/');
   };
 
+  const renderHomeLogoLink = () => {
+    if (active === 'contact') {
+      // If active is "contact," don't render the link
+      return <div className='h-40'>''</div>;
+    }
+
+    return (
+      <Link to="/">
+        <img
+          src={`${active === 'home'
+            ? '/ComillaLogoStaticWithText.png'
+            : '/ComillaWhiteTextLogo.png'
+          }`}
+          className='position relative w-52 h-40 rounded-lg brightness-125'
+          alt="Logo"
+        />
+      </Link>
+    );
+  };
+
   return (
     <nav>
-      <div className='flex flex-row justify-between items-center mr-10 md:mx-20 lg:mx-36 py-5'>
-        <Link to="/">
-          <img src='/ComillaWhiteTextLogo.png' className='position relative w-52 h-40 rounded-lg brightness-125' alt="Logo" />
-        </Link>
+      <div className='flex flex-row justify-between items-center mr-10 md:mx-10 lg:mx-36 py-5'>
+        {renderHomeLogoLink()}
 
         {/* Burger menu button for mobile */}
         <div className='block md:hidden position relative z-50'>
