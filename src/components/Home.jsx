@@ -18,7 +18,7 @@ const Home = () => {
   
   return (
     <div>
-      <section className='content h-screen flex flex-col overflow-y-auto'>
+      <section className='content-home h-screen flex flex-col overflow-y-auto'>
         <PreloadImage src='projectInProgressRender.jpg' />
         <div className='color-sweep-animation'>
           <div className='absolute inset-0'>

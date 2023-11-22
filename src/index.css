@@ -343,14 +343,21 @@ html, body {
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-  }  
+  }
+
+  .content-home {
+    flex: 1;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
 
   /* For Safari on iOS */
-  /* @supports (-webkit-touch-callout: none) {
-    .content {
+  @supports (-webkit-touch-callout: none) {
+    .content-home {
       height: -webkit-fill-available;
     }
-  } */
+  }
   
   footer {
     position: relative;
