@@ -103,7 +103,7 @@ const Manage = () => {
                 </div>
                 </div>
             </section>
-            <div className='flex flex-col md:grid md:grid-cols-12 mx-10 mb-20 md:mt-40 gap-10 relative items-center justify-center md:justify-normal md:items-start'>
+            <div className='flex flex-col md:grid md:grid-cols-12 mx-10 mb-20 mt-40 gap-10 relative items-center justify-center md:justify-normal md:items-start'>
                 <div className='col-span-2'>
                     <h1 className='text-3xl'>Menu</h1>
                     <div className='grid grid-cols-2 gap-5 mt-5 md:gap-0 md:block md:space-y-3'>
