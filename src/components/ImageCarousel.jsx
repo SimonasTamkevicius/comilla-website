@@ -14,7 +14,7 @@ const ImageCarousel = ({ images }) => {
   }, [images]);
 
   return (
-    <div className="absolute w-full px-10 md:px-20 lg:px-36 mt-24 md:mt-20 slide-up-carousel">
+    <div className="absolute w-full px-10 md:px-20 lg:px-36 mt-4 md:mt-4 slide-up-carousel">
       <Carousel
         selectedItem={currentImageIndex}
         showThumbs={false}
