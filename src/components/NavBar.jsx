@@ -30,7 +30,6 @@ const NavBar = (props) => {
 
   const renderHomeLogoLink = () => {
     if (active === 'contact') {
-      // If active is "contact," don't render the link
       return <div className='h-40'>''</div>;
     }
 

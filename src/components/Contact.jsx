@@ -1,17 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
-import  { BsPhone, BsEnvelope, BsMap, BsCheck2 } from "react-icons/bs";
+import { BsEnvelope, BsPhone, BsMap } from "react-icons/bs";
 import { GoPaperAirplane } from "react-icons/go";
 import { FaCheck } from "react-icons/fa";
 import GoogleMap from './GoogleMap';
 import Footer from './Footer';
-import axiosInstance from '../../utils/axiosInstance';
+import emailjs, { send } from 'emailjs-com';
+
+const publicKey = import.meta.env.VITE_PUBLIC_KEY;
+const serviceID = import.meta.env.VITE_SERVICE_ID;
+const templateID = import.meta.env.VITE_TEMPLATE_ID;
+
+emailjs.init(publicKey);
 
 const Contact = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [subject, setSubject] = useState('');
-    const [message, setMessage] = useState('');
+    const [formData, setFormData] = useState({
+        user_name: '',
+        user_email: '',
+        user_subject: '',
+        message: '',
+    });
 
     const [messageSent, setMessageSent] = useState(false);
 
@@ -19,52 +27,31 @@ const Contact = () => {
         window.scrollTo({ top: 0, behavior: 'auto' });
     }, []);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const formData = new FormData();
 
-        formData.append("name", name);
-        formData.append("email", email);
-        formData.append("subject", subject);
-        formData.append("message", message);
+        try {
+            await emailjs.sendForm(serviceID, templateID, e.target);
 
-        axiosInstance.post("/contact", formData, {
-            headers: {
-                "Content-Type": "application/json",
-            },
-        })
-        .then((res) => {
-            console.log(res);
             setMessageSent(true);
-            setName('');
-            setEmail('');
-            setSubject('');
-            setMessage('');
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+            setFormData({
+                user_name: '',
+                user_email: '',
+                user_subject: '',
+                message: '',
+            });
+        } catch (error) {
+            console.error('Error sending email:', error);
+        }
     }
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        switch (name) {
-          case 'name':
-            setName(value);
-            break;
-          case 'email':
-            setEmail(value);
-            break;
-          case 'subject':
-            setSubject(value);
-            break;
-          case 'message':
-            setMessage(value);
-            break;
-          default:
-            break;
-        }
-      };
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
       
   return (
     <div className='w-screen h-screen container-content'>
@@ -130,20 +117,20 @@ const Contact = () => {
                     <div className='flex flex-col lg:flex-row justify-between lg:space-x-5'>
                         <div className='flex flex-col w-full space-y-2'>
                             <label className='text-gray-700 font-semibold text-2xl'>Name</label>
-                            <input value={name} onChange={handleChange} className='h-10 p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' type='text' placeholder='Your name' name='name' required />
+                            <input value={formData.user_name} onChange={handleChange} className='h-10 p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' type='text' placeholder='Your name' name='user_name' required />
                         </div>
                         <div className='flex flex-col w-full space-y-2 mt-2 lg:mt-0'>
                             <label className='text-gray-700 font-semibold text-2xl'>Email</label>
-                            <input value={email} onChange={handleChange} className='h-10 p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' type='email' placeholder='Your email' name='email' required />
+                            <input value={formData.user_email} onChange={handleChange} className='h-10 p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' type='email' placeholder='Your email' name='user_email' required />
                         </div>
                     </div>
                     <div className='flex flex-col w-full space-y-2'>
                         <label className='text-gray-700 font-semibold text-2xl'>Subject</label>
-                        <input value={subject} onChange={handleChange} className='h-10 p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' type='text' placeholder='Subject' name='subject' required />
+                        <input value={formData.user_subject} onChange={handleChange} className='h-10 p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' type='text' placeholder='Subject' name='user_subject' required />
                     </div>
                     <div className='flex flex-col w-full space-y-2'>
                         <label className='text-gray-700 font-semibold text-2xl'>Message</label>
-                        <textarea value={message} onChange={handleChange} className='p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' id="message" name="message" rows="6" placeholder='Message' required></textarea>
+                        <textarea value={formData.message} onChange={handleChange} className='p-1 rounded-md focused-text-input focus:outline-[#4ca4c8]' id="message" name="message" rows="6" placeholder='Message' required></textarea>
                     </div>
                     <div className='flex justify-center items-center'>
                         <button type='submit' className='flex flex-row justify-between items-center border-2 border-white rounded-md hover:border-[#4ca4c8] bg-[#4ca4c8] hover:bg-white py-2 px-3 space-x-3 hovered-button transition-colors duration-300 ease-in-out md:mt-5'>
@@ -156,9 +143,9 @@ const Contact = () => {
             }
             {messageSent &&
                 <div className='message-sent md:col-span-7 md:row-span-5 flex flex-col p-4 bg-gray-50 border-2 border-[#4ca4c8] rounded-md justify-center items-center space-y-10'>
-                <div className="border-2 rounded-full border-gray-400 p-5 animated-check">
-                    <FaCheck className="text-4xl" />
-                </div>
+                    <div className="border-2 rounded-full border-gray-400 p-5 animated-check">
+                        <FaCheck className="text-4xl" />
+                    </div>
                     <h1 className='text-4xl text-center'>Your Message Has Been Sent!</h1>
                     <button onClick={() => {setMessageSent(false)}} className='flex flex-row justify-between items-center border-2 text-white hover:text-black border-white rounded-md hover:border-[#4ca4c8] bg-[#4ca4c8] hover:bg-white py-2 px-5 space-x-3 hovered-button transition-colors duration-300 ease-in-out md:mt-5'>Back</button>
                 </div>
