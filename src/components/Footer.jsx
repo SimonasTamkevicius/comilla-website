@@ -14,9 +14,9 @@ const Footer = () => {
         </Link>
         <div className="flex flex-col justify-center items-start ml-5">
           <p className="text-sm">Comilla Inc.</p>
-          <p className="text-xs">96 Bowes Rd. Unit 3,</p>
-          <p className="text-xs">Concord, Ontario</p>
-          <p className="text-xs">L4K 1J6</p>
+          <p className="text-xs">1260 Journey's End Circle, Unit 9,</p>
+          <p className="text-xs">Markham, Ontario</p>
+          <p className="text-xs">L3Y 8Z7</p>
         </div>
       </div>
       <div className="flex flex-col justify-start items-start col-span-5 p-4 z-10 ml-5 md:ml-0">

@@ -103,7 +103,7 @@ const Contact = () => {
                         </div>
                         <div className='flex flex-col'>
                             <h4 className='text-gray-700 font-semibold text-2xl'>Address</h4>
-                            <p className='text-gray-500'>96 Bowes Rd. Unit 3, Concord, Ontario</p>
+                            <p className='text-gray-500'>1260 Journey's End Circle, Unit 9, Markham, Ontario</p>
                         </div>
                     </div>
                     <div className='w-full h-full'>
