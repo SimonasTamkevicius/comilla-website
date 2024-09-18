@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="flex flex-col justify-center items-start ml-5">
           <p className="text-sm">Comilla Inc.</p>
           <p className="text-xs">1260 Journey's End Circle, Unit 9,</p>
-          <p className="text-xs">Markham, Ontario</p>
+          <p className="text-xs">Newmarket, Ontario</p>
           <p className="text-xs">L3Y 8Z7</p>
         </div>
       </div>
